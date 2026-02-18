@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclipse of the Forgotten</title>
+    
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fonte Pixel Art -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
+
+
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= MENU FIXO ================= -->
+    <header class="game-menu">
+
+        <div class="menu-logo">
+            <img src="assets/logo.png" alt="Eclipse Logo">
+        </div>
+
+        <nav class="menu-links">
+            <a href="#home">Home</a>
+            <a href="#about">Sobre</a>
+            <a href="#features">Mecânicas</a>
+            <a href="#trailer">Trailer</a>
+            <a href="#gallery">Biblioteca</a>
+        </nav>
+
+        <!-- Botão de som -->
+        <div class="audio-controls">
+
+            <div class="volume-container">
+
+                <button id="music-toggle" class="music-btn">🔊</button>
+
+                <!-- Container do slider -->
+                <div class="volume-slider-container">
+                    <input type="range" 
+                        id="volume-slider" 
+                        min="0" 
+                        max="1" 
+                        step="0.01" 
+                        value="0.3">
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+    
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero" id="home">
+
+        <!-- Canvas de partículas -->
+        <canvas id="particles-canvas"></canvas>
+
+        <!-- Overlay escuro para melhorar contraste do texto -->
+        <div class="overlay"></div>
+
+        <!-- Conteúdo principal da hero -->
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <span class="hero-tagline">Um RPG Sombrio de Exploração e Destino</span>
+
+                <h1>Eclipse of the Forgotten</h1>
+
+                <div class="hero-divider"></div>
+
+                <p class="hero-mini-synopsis">
+                    Quando o sol foi devorado pela fenda púrpura, o mundo não apenas escureceu —
+                    ele se partiu.
+
+                    As muralhas de Vael’Thar ruíram sob uma noite que nunca termina.
+                    Ecos de uma civilização esquecida ainda sussurram entre as ruínas,
+                    enquanto criaturas corrompidas vagam pelas sombras em busca do que restou da luz.
+
+                    Marcado por uma força ancestral que pulsa sob sua pele,
+                    você é o único capaz de atravessar as fendas do mundo
+                    e confrontar o coração do Eclipse.
+
+                    Cada passo revela um segredo.
+                    Cada batalha aproxima você da verdade.
+                    E toda escolha carrega um preço.
+                </p>
+
+            </div>
+
+            <div class="hero-bottom">
+                <button class="cta-button" id="journey-btn">
+                    Iniciar a sua jornada
+                </button>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <!-- ================= SOBRE O JOGO ================= -->
+    <section class="about" id="about">
+
+        <div class="about-container">
+
+            <!-- Livro Sinopse -->
+            <div class="about-text">
+
+                <h2>Sobre o Jogo</h2>
+
+                <div class="book-container">
+
+                    <div class="book-wrapper">
+
+                        <div class="book-page">
+                            <p>
+                                Em um mundo onde o sol foi consumido por um eclipse eterno, o Reino de Vael'Thar caiu no silêncio das sombras. As muralhas antes douradas agora repousam sob a névoa púrpura de uma noite sem fim, e criaturas esquecidas — moldadas pelo medo, pela dor e por antigas maldições — vagam pelas ruínas de uma civilização outrora gloriosa.
+                                <br><br>
+                                Quando o céu se fechou pela primeira vez, os sacerdotes prometeram que a escuridão seria passageira. Mas os dias nunca retornaram. O eclipse não era um fenômeno natural — era um selo rompido.
+                            </p>
+                        </div>
+
+                        <div class="book-page">
+                            <p>
+                                Você assume o papel do Portador da Marca, um guerreiro tocado por uma energia ancestral que pulsa entre luz e trevas. Marcado por um símbolo proibido, você é ao mesmo tempo amaldiçoado e escolhido. Sua marca concede poder… mas cada uso aproxima sua alma do mesmo vazio que consumiu o mundo.
+                                <br><br>
+                                Explorando castelos abandonados, florestas espectrais e catacumbas esquecidas pelo tempo, você descobrirá fragmentos da verdade por trás do Eclipse. Cada região é interconectada por caminhos ocultos, passagens secretas e relíquias que alteram completamente a forma como você atravessa o mundo.
+                            </p>
+                        </div>
+
+                        <div class="book-page">
+                            <p>
+                                Mas o perigo não está apenas nas criaturas que espreitam nas sombras.
+                                <br><br>
+                                Antigos guardiões despertaram.
+                                <br><br>
+                                Entidades que existiam antes do próprio sol agora testam sua determinação. Cada confronto exige precisão, estratégia e domínio das habilidades adquiridas ao longo da jornada. O combate é intenso, responsivo e punitivo — mas sempre justo.
+                                <br><br>
+                                À medida que você desbloqueia novos poderes, o mundo se transforma. Portas antes seladas se abrem. Caminhos impossíveis se tornam acessíveis. Segredos enterrados sob gerações de silêncio emergem à superfície.
+                            </p>
+                        </div>
+
+                        <div class="book-page">
+                            <p>
+                                No coração do eclipse reside uma verdade que desafia tudo o que você acredita sobre luz e escuridão.
+                                <br><br>
+                                E talvez… o verdadeiro inimigo não seja a noite...
+                                <br><br>
+                                Talvez seja aquilo que ela revelou...
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Botões -->
+                    <div class="book-controls">
+                        <button id="prev-page">←</button>
+                        <button id="next-page">→</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Coluna visual (imagem ou arte futura) -->
+            <div class="about-image">
+
+                <div class="about-slider">
+
+                    <img src="assets/about1.png" class="about-slide active">
+                    <img src="assets/about2.png" class="about-slide">
+                    <img src="assets/about3.png" class="about-slide">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MECÂNICAS ================= -->
+    <section class="features" id="features">
+
+        <h2 class="section-title">Mecânicas Principais</h2>
+
+        <div class="features-container">
+
+            <!-- Card 1 -->
+            <div class="feature-card hidden">
+                <h3>Exploração Não Linear</h3>
+                <p>
+                    Descubra áreas secretas, atalhos ocultos e caminhos alternativos
+                    em um mundo interconectado.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="feature-card hidden">
+                <h3>Combate Preciso</h3>
+                <p>
+                    Sistema de combate responsivo com esquivas, habilidades
+                    especiais e inimigos desafiadores.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="feature-card hidden">
+                <h3>Habilidades Evolutivas</h3>
+                <p>
+                    Desbloqueie novos poderes que transformam a maneira como você
+                    explora o mundo.
+                </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="feature-card hidden">
+                <h3>Sistema de Marca</h3>
+                <p>
+                    Utilize o poder da Marca para liberar habilidades únicas,
+                    mas cuidado: cada uso aproxima você da corrupção.
+                </p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="feature-card hidden">
+                <h3>Chefes Épicos</h3>
+                <p>
+                    Enfrente guardiões ancestrais e entidades cósmicas
+                    que desafiam suas habilidades e estratégia.
+                </p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="feature-card hidden">
+                <h3>Mundo Interconectado</h3>
+                <p>
+                    Regiões se conectam por caminhos secretos, atalhos
+                    ocultos e áreas desbloqueáveis com novas habilidades.
+                </p>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="feature-card hidden">
+                <h3>Ambientação Dinâmica</h3>
+                <p>
+                    Efeitos de luz, névoa e partículas reagem ao ambiente,
+                    criando uma atmosfera viva e imersiva.
+                </p>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="feature-card hidden">
+                <h3>Progressão Personalizada</h3>
+                <p>
+                    Escolha como evoluir seu personagem, focando em combate,
+                    resistência ou domínio da Marca.
+                </p>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="feature-card hidden">
+                <h3>Segredos e Relíquias</h3>
+                <p>
+                    Descubra artefatos antigos que alteram drasticamente
+                    sua forma de explorar o mundo.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= TRAILER ================= -->
+    <section class="trailer" id="trailer">
+
+        <h2 class="section-title">Trailler Oficial</h2>
+
+        <div class="trailer-container">
+
+            <!-- Vídeo Embed -->
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="Trailer do jogo"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= GALERIA / CODEX ================= -->
+    <section class="gallery" id="gallery">
+
+        <h2 class="section-title">Biblioteca</h2>
+
+        <div class="codex-table-wrapper">
+            <table class="codex-table">
+                <thead>
+                    <tr>
+                        <th>Herói</th>
+                        <th>NPC</th>
+                        <th>Monstros Comuns</th>
+                        <th>Monstros de Elite</th>
+                        <th>Boss</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <!-- ================= HERÓI ================= -->
+                        <td>
+                            <div class="codex-column">
+
+                                <img src="assets/hero.png" class="codex-item" 
+                                data-title="O Portador da Marca"
+                                data-description="Antes do Eclipse, ele era apenas mais um guerreiro entre tantos.
+                                Um soldado anônimo nas muralhas de Vael’Thar.
+
+                                Quando o céu escureceu e o sol foi devorado pela fenda púrpura, algo o escolheu.
+
+                                Ou o marcou.
+
+                                A Marca surgiu queimando sua pele como ferro em brasa, formando um símbolo ancestral que pulsa com energia violeta. Ela não é apenas um selo — é um fragmento do próprio Eclipse. Um elo entre o mundo físico e a ruptura que o consome.
+
+                                O Portador veste um manto simples, resistente às longas jornadas pelas ruínas e florestas espectrais. Sua postura é firme, disciplinada. Ele não luta por glória, mas por resposta.
+
+                                Em combate, seus movimentos são precisos e contidos. Cada golpe é calculado. Cada esquiva, medida. Ele não desperdiça energia — porque sabe que o verdadeiro poder vem da Marca… e que usá-la demais cobra um preço.
+
+                                A Marca permite que ele:
+
+                                Canalize energia sombria em ataques devastadores;
+                                Interaja com fendas invisíveis no mundo;
+                                Revelar passagens ocultas;
+                                Resistir à corrupção que consome outros;
+
+                                Mas a cada uso, a energia púrpura percorre suas veias como veneno luminoso.
+
+                                E há rumores…
+
+                                Que, no final da jornada, a Marca exigirá algo em troca.">
+
+                            </div>
+                        </td>
+
+                        <!-- ================= NPC ================= -->
+                        <td>
+                            <div class="codex-column">
+
+                                <img src="assets/npc1.png" class="codex-item"
+                                data-title="Lorien, o Mercador das Cinzas"
+                                data-description="Entre as ruínas silenciosas de Vael’Thar, há uma luz que nunca se apaga — a lanterna de Lorien.
+
+                                Envolto em mantos gastos pelo tempo e sempre com o rosto parcialmente oculto sob o capuz, Lorien vaga pelas regiões corrompidas carregando uma grande bolsa repleta de frascos, pergaminhos e artefatos recuperados das ruínas. Poucos sabem de onde ele veio. Alguns dizem que era um antigo alquimista da capital antes do Eclipse. Outros acreditam que ele já morreu… e voltou diferente.
+
+                                Sua presença é anunciada pelo som suave de vidros tilintando e pela luz dourada da lanterna que segura firmemente na mão. A chama nunca se apaga — mesmo sob chuva, névoa ou ventos sombrios.
+
+                                Mas negociar com Lorien exige mais do que moedas.
+
+                                Ele parece saber quando o Portador da Marca está se aproximando da corrupção. Às vezes oferece descontos… outras vezes, cobra um preço invisível.
+
+                                “O ouro compra suprimentos.
+                                A verdade… essa custa bem mais.”
+
+                                Apesar de sua natureza enigmática, Lorien nunca traiu um cliente — pelo menos não diretamente.">
+
+                                <img src="assets/npc2.png" class="codex-item"
+                                data-title="Eldric, o Guardião dos Ecos"
+                                data-description="Entre as torres partidas e bibliotecas soterradas de Vael’Thar, há quem ainda preserve o conhecimento proibido.
+                                Eldric é um desses poucos sobreviventes.
+
+                                Vestido com mantos antigos e carregando um cajado entalhado com runas esquecidas, ele dedica seus dias a estudar os fragmentos do Eclipse. Diferente de outros estudiosos que sucumbiram à loucura, Eldric aprendeu a ouvir os “Ecos” — murmúrios residuais da realidade anterior ao colapso.
+
+                                Seus olhos brilham com uma luz violeta tênue, sinal de que já esteve perigosamente próximo da corrupção… e voltou.
+
+                                Eldric não vende itens comuns.
+                                Ele troca conhecimento por fragmentos de memória — cristais raros encontrados nas zonas mais corrompidas.
+
+                                “O Eclipse não destruiu o mundo…
+                                apenas removeu o véu.”
+
+                                Dizem que ele sabe como o Eclipse começou.
+                                Mas toda vez que alguém pergunta diretamente, o ar ao redor dele parece ficar mais frio… e as runas em seu cajado brilham intensamente.">
+
+                                <img src="assets/npc3.png" class="codex-item"
+                                data-title="Seraphine, a Tecelã de Essências"
+                                data-description="Entre os corredores quebrados de Vael’Thar, onde o ar é pesado de poeira antiga e energia púrpura, caminha uma figura envolta em mantos escuros, sempre acompanhada pelo suave brilho de frascos cintilantes.
+
+                                Seraphine não nasceu alquimista.
+                                Ela foi forjada pelo Eclipse.
+
+                                Antes da queda do sol, era aprendiz na antiga Ordem dos Transmutadores — estudiosos que buscavam transformar matéria e energia. Quando o céu foi rasgado e a Marca começou a surgir nos escolhidos, ela não recebeu o símbolo na pele… mas em seus frascos.
+
+                                Os primeiros reagentes que manipulou após o Eclipse reagiram de maneira diferente.
+                                A energia púrpura passou a se misturar com suas fórmulas.
+
+                                E ela aprendeu a dominar aquilo que matou tantos outros.
+                                
+                                Seraphine não vende simples poções. Ela cria diversos tipos de elixires, frascos de resistência, bombas alquímicas, catalisadores e muito mais...
+                                
+                                Mas há um detalhe…
+
+                                Algumas de suas criações têm efeitos colaterais.
+
+                                “Toda transformação exige sacrifício.
+                                A pergunta é: você está disposto a pagar?”
+                                
+                                Dizem que Seraphine está tentando recriar artificialmente a Marca.
+
+                                Não para destruir o Eclipse.
+
+                                Mas para compreendê-lo.
+
+                                E talvez… controlá-lo.">
+
+                            </div>
+                        </td>
+
+                        <!-- ================= MONSTROS COMUNS ================= -->
+                        <td>
+                            <div class="codex-column">
+
+                                <img src="assets/monster1.png" class="codex-item"
+                                data-title="Rastejador de Cinzas"
+                                data-description="Criatura nascida das ruínas queimadas de Vael’Thar, o Rastejador de Cinzas é uma manifestação da corrupção deixada pelo Eclipse. Pequeno em estatura, mas perverso em instinto, ele se move de forma irregular e inquieta, como se suas articulações não obedecessem às leis naturais.
+
+                                Seu corpo é coberto por uma carapaça escura e rachada, de onde emana um brilho avermelhado fraco — vestígios da energia sombria que o sustenta. Olhos múltiplos e esbranquiçados observam cada movimento do viajante, piscando de maneira assíncrona, como se estivessem fora de fase com a própria realidade.
+
+                                Embora frágil quando isolado, o Rastejador raramente ataca sozinho. Ele prefere emboscar aventureiros em áreas estreitas e escuras, saltando em rajadas rápidas e tentando corroer a energia vital da vítima com mordidas impregnadas de corrupção.
+
+                                Dizem que essas criaturas eram, outrora, habitantes comuns da cidade antiga — estudiosos e escribas que tentaram compreender o Eclipse. Agora, restam apenas ecos deformados de suas mentes, presas em corpos retorcidos pela Marca.">
+
+                                <img src="assets/monster2.png" class="codex-item"
+                                data-title="Devorador de Miasma"
+                                data-description="Nas áreas onde a corrupção se acumulou por tempo demais, algo começa a se formar.
+
+                                O Devorador de Miasma não nasceu como criatura.
+                                Ele é resultado do acúmulo de energia púrpura condensada em matéria orgânica morta — carne, ossos e sombra fundidos em uma única entidade instável.
+
+                                Seu corpo é disforme e inchado, como se estivesse constantemente em processo de mutação. Espinhos ósseos atravessam sua pele rachada, enquanto um líquido violeta viscoso escorre de fendas abertas em sua carne.
+
+                                Seu rosto — se é que pode ser chamado assim — é apenas uma massa de tecido distorcido, onde um único olho púrpura brilha intensamente, pulsando no mesmo ritmo da corrupção ao seu redor.
+                                
+                                O Devorador não caça por instinto.
+
+                                Ele é atraído por energia.
+
+                                Quanto mais o Portador da Marca utiliza seus poderes, maior a chance de despertar um Devorador nas proximidades. Ele sente o uso da Marca como um farol no escuro.
+
+                                Move-se lentamente… mas cada passo deixa para trás uma poça de miasma corrosivo que enfraquece o chão e aqueles que ousam permanecer sobre ele.">
+
+                                <img src="assets/monster3.png" class="codex-item"
+                                data-title="Carniçal da Poça Sombria"
+                                data-description="Nas regiões onde o solo já não sustenta vida — apenas corrupção — surgem os Carniçais da Poça Sombria.
+
+                                Essas criaturas rastejam como predadores pacientes, mantendo seus corpos deformados próximos ao chão envenenado que os alimenta. Diferente de outras aberrações do Eclipse, o Carniçal não nasceu de um humano específico… ele é a fusão de múltiplos corpos consumidos pelo miasma púrpura.
+
+                                Seu dorso é coberto por espinhos ósseos retorcidos, como fragmentos de esqueletos que tentam emergir novamente. Seus membros são longos e desproporcionais, terminando em garras capazes de atravessar armaduras enfraquecidas pela corrupção.
+
+                                Mas o que realmente denuncia sua presença é a poça sob seu corpo.
+
+                                Uma substância espessa, brilhante e violeta escorre continuamente de sua carne rachada, formando um lago pulsante de energia instável. Essa essência não é sangue.
+
+                                É o próprio resíduo do Eclipse.
+
+                                O Carniçal permanece imóvel por longos períodos, confundindo-se com a paisagem contaminada.
+                                Quando detecta vibrações ou energia da Marca, seus olhos brilham intensamente e ele se move com velocidade surpreendente para uma criatura de seu tamanho.
+
+                                Ele raramente abandona sua poça — pois é dela que extrai força.">
+
+                                <img src="assets/monster4.png" class="codex-item"
+                                data-title="Tecelã da Fenda Abissal"
+                                data-description="Nas regiões onde o solo já não é solo, mas carne petrificada pela corrupção, habita a Tecelã da Fenda Abissal.
+
+                                Ela não é apenas uma criatura.
+
+                                Ela é um ponto de ancoragem.
+
+                                Seu corpo grotesco, coberto por placas ósseas irregulares e espinhos retorcidos, parece mais uma extensão do próprio Eclipse do que um ser vivo. De sua carapaça rachada escorre um fluido violeta viscoso que queima o chão e se transforma em névoa púrpura ao evaporar.
+
+                                Seus múltiplos olhos brilham como pequenos fragmentos da ruptura dimensional, pulsando no mesmo ritmo da energia da Marca.
+
+                                Mas o mais perturbador é o que se ergue atrás dela.
+
+                                Uma coluna de miasma espesso se eleva como fumaça viva, conectando-a à Fenda — como se estivesse constantemente recebendo energia de outro plano.
+
+                                A Tecelã não caça em campo aberto.
+
+                                Ela permanece imóvel, misturada às sombras e às poças de corrupção, esperando que sua presa se aproxime. Quando o Portador da Marca utiliza suas habilidades, a criatura reage violentamente, como se fosse provocada por um sinal invisível.
+
+                                Ela não corre.
+
+                                Ela avança lentamente, com precisão calculada.">
+
+                            </div>
+                        </td>
+
+                        <!-- ================= MONSTROS DE ELITE ================= -->
+                        <td>
+                            <div class="codex-column">
+
+                                <img src="assets/elite1.png" class="codex-item"
+                                data-title="Arauto da Fenda Carmesim"
+                                data-description="Nas regiões mais profundas de Vael’Thar, onde a luz jamais alcança e o ar é pesado como luto antigo, surgem os Arautos da Fenda Carmesim.
+
+                                Essas criaturas não nasceram da carne, mas da ruptura.
+                                Quando o Eclipse consumiu o céu, fragmentos da própria realidade se partiram — e algo começou a atravessar.
+
+                                O Arauto é uma entidade envolta em armadura corroída e fragmentos de ossos ancestrais, como se tivesse sido montado a partir de restos de guerreiros caídos. Sob o capuz rasgado, não há rosto — apenas dois pontos de energia violeta que observam silenciosamente suas presas.
+
+                                Em seu peito, pulsa um núcleo carmesim instável — uma fenda aberta para outra dimensão. Essa fissura não apenas mantém a criatura viva, como também distorce o espaço ao seu redor, fazendo com que o chão pareça vibrar e a própria sombra se mova de forma errática.
+
+                                Empunhando uma lâmina corrompida pela mesma energia púrpura, o Arauto ataca com movimentos pesados e imprevisíveis. Cada golpe deixa no ar um rastro espectral, como se a realidade fosse cortada junto com a carne.
+
+                                Mas o mais inquietante não é sua força.
+
+                                É o silêncio.
+
+                                O Arauto nunca grita.
+                                Nunca rosna.
+                                Nunca demonstra emoção.
+
+                                Ele apenas observa… e avança.">
+
+                                <img src="assets/elite2.png" class="codex-item"
+                                data-title="Varkhûn, o Guardião da Fenda Profana"
+                                data-description="Quando o Eclipse rasgou os céus de Vael’Thar, nem todos os horrores vieram de fora.
+
+                                Alguns nasceram da própria terra.
+
+                                Varkhûn não é apenas uma criatura — ele é um ponto de ruptura materializado. Onde ele pisa, o chão se fragmenta. Onde ele respira, o ar se torna pesado como se o próprio mundo resistisse à sua presença.
+
+                                Seu corpo é formado por placas rochosas fundidas a carne corrompida, como se tivesse sido esculpido da própria ruína da cidade antiga. Fendas púrpuras percorrem sua estrutura, pulsando em um ritmo irregular, como um coração que bate fora de sincronia com a realidade.
+
+                                No centro do peito, uma abertura instável revela um núcleo violeta incandescente — um fragmento da mesma energia que deu origem à Marca do Portador.
+
+                                Mas diferente do herói…
+
+                                Varkhûn não controla a energia.
+
+                                Ele é consumido por ela.
+                                
+                                Os antigos registros indicam que Varkhûn pode ter sido um comandante da guarda real que tentou selar a primeira ruptura durante o início do Eclipse.
+
+                                Ele falhou.
+
+                                E a fenda… o escolheu como receptáculo.
+
+                                Desde então, ele não guarda um castelo.
+
+                                Guarda a própria cicatriz do mundo.">
+
+                            </div>
+                        </td>
+
+                        <!-- ================= BOSS ================= -->
+                        <td>
+                            <div class="codex-column">
+
+                                <img src="assets/boss1.png" class="codex-item"
+                                data-title="Vorthar, o Trono da Ruptura"
+                                data-description="Antes do Eclipse consumir o céu, Vorthar era apenas um nome esquecido nos registros antigos — um general, um estrategista, um homem que acreditava que poderia controlar o impossível.
+
+                                Quando a fenda púrpura rasgou o firmamento, ele não fugiu.
+
+                                Ele avançou.
+
+                                Enquanto outros temiam o desconhecido, Vorthar tentou dominá-lo. Invocou rituais proibidos, abriu passagens que jamais deveriam ser tocadas… e foi o primeiro a atravessar.
+
+                                Mas ninguém atravessa a Ruptura e retorna inteiro.
+
+                                Hoje, o que resta de Vorthar é uma entidade colossal formada por carne petrificada, armaduras fundidas ao corpo e fragmentos de realidade quebrada. Seu peito abriga um núcleo pulsante de energia violeta — um coração que não bate… mas vibra com o poder do próprio Eclipse.
+
+                                Sua forma é instável. Espinhos emergem e se retraem como se o próprio corpo estivesse em constante reconstrução. A lâmina que empunha não é metal — é cristalização da fenda, capaz de cortar não apenas carne, mas o espaço ao redor.
+
+                                Ao seu redor, o ar se distorce. O chão racha. A gravidade parece falhar.
+
+                                Vorthar não fala.
+
+                                Ele ecoa.
+
+                                Sua presença é acompanhada por sussurros que atravessam a mente, memórias que não pertencem ao jogador e visões de um mundo já consumido.
+
+                                Dizem que a Marca do Portador reage violentamente na presença de Vorthar.
+
+                                Como se ambos compartilhassem a mesma origem.
+
+                                Ou o mesmo destino.">
+
+                            </div>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <!-- ================= MODAL CODEX ================= -->
+    <div class="codex-modal" id="codexModal">
+        <div class="codex-content">
+
+            <span class="close-codex">&times;</span>
+
+            <div class="codex-layout">
+
+                <div class="codex-left">
+                    <img id="codexImage" src="">
+                </div>
+
+                <div class="codex-right">
+                    <h3 id="codexTitle"></h3>
+                    <p id="codexDescription"></p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= LIGHTBOX ================= -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <!-- ================= ÁUDIO AMBIENTE ================= -->
+    <audio id="bg-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
