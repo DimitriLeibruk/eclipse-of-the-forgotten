@@ -38,7 +38,7 @@ body {
 
 /* Logo */
 .menu-logo img {
-    height: 60px; /* Ajuste fino se quiser */
+    height: 60px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -105,7 +105,7 @@ body {
 /* Container do slider */
 .volume-slider-container {
     position: absolute;
-    top: 40px; /* aparece abaixo do botão */
+    top: 40px;
 
     background: rgba(15, 16, 32, 0.95);
     padding: 15px 10px;
@@ -117,7 +117,6 @@ body {
 
     transition: 0.3s ease;
 
-    /* sombra leve */
     box-shadow: 0 0 20px rgba(162, 57, 202, 0.4);
 }
 
@@ -125,7 +124,7 @@ body {
 #volume-slider {
     appearance: slider-vertical;
     -webkit-appearance: slider-vertical;
-    writing-mode: bt-lr; /* fallback */
+    writing-mode: bt-lr;
     width: 8px;
     height: 100px;
     cursor: pointer;
@@ -220,7 +219,7 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* separa topo e botão */
+    justify-content: space-between;
     align-items: center;
 
     padding: 120px 20px 60px 20px;
@@ -247,7 +246,7 @@ body {
 
 /* Título principal */
 .hero-content h1 {
-    font-family: 'Press Start 2P', cursive; /* Fonte pixel */
+    font-family: 'Press Start 2P', cursive;
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #C158FF;
@@ -594,9 +593,9 @@ body {
     padding: 50px;
     border-radius: 20px;
 
-    width: 1100px;          /* aumentamos */
+    width: 1100px;
     max-width: 95%;
-    height: 600px;          /* altura fixa */
+    height: 600px;
 
     box-shadow: 0 0 40px rgba(162,57,202,0.6);
 
@@ -774,117 +773,204 @@ body {
 }
 
 
-/* ================= RESPONSIVIDADE MENU ================= */
-
-@media (max-width: 900px) {
+/* ================= MOBILE MENU ================= */
+@media (max-width: 768px) {
 
     .game-menu {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         height: auto;
-        padding: 10px 20px;
+        padding: 15px 10px;
+        gap: 10px;
     }
 
     .menu-links {
-        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
     .menu-links a {
-        margin: 0 8px;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        margin: 0;
     }
 
+    .audio-controls {
+        margin-top: 5px;
+    }
+
+    .volume-slider-container {
+        display: none;
+    }
 }
 
 
-/* ================= RESPONSIVIDADE HERO ================= */
-
+/* ================= MOBILE HERO ================= */
 @media (max-width: 768px) {
 
+    .hero {
+        height: auto;
+        min-height: 100vh;
+    }
+
     .hero-content {
-        padding: 100px 20px 40px 20px;
+        padding: 100px 20px 50px 20px;
+        justify-content: center;
+        gap: 20px;
     }
 
     .hero-content h1 {
-        font-size: 1.6rem;
-        line-height: 1.4;
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+
+    .hero-tagline {
+        font-size: 0.7rem;
     }
 
     .hero-mini-synopsis {
-        font-size: 1rem;
+        font-size: 0.95rem;
         line-height: 1.6;
         padding: 0 10px;
     }
 
     .cta-button {
-        padding: 14px 28px;
+        width: 90%;
+        max-width: 300px;
+        padding: 14px;
         font-size: 1rem;
     }
-
 }
 
-/* ================= RESPONSIVIDADE ABOUT ================= */
-
-@media (max-width: 1000px) {
+/* ================= MOBILE ABOUT ================= */
+@media (max-width: 768px) {
 
     .about-container {
         flex-direction: column;
         gap: 40px;
     }
 
-    .about {
-        padding: 80px 5%;
-    }
-
-}
-
-/* ================= RESPONSIVIDADE TRAILER ================= */
-
-@media (max-width: 768px) {
-
-    .video-wrapper {
+    .about-text {
         width: 100%;
     }
 
+    .about-image {
+        width: 100%;
+        order: 2;
+    }
+
+    .about-slider {
+        aspect-ratio: auto;
+        height: 250px;
+    }
+
+    .about-slide {
+        object-fit: cover;
+    }
+
 }
 
-/* ================= CODEX MOBILE ================= */
+/* ================= MOBILE FEATURES ================= */
+@media (max-width: 768px) {
 
-@media (max-width: 1100px) {
+    .features {
+        padding: 70px 5%;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+}
+
+/* ================= MOBILE TRAILER ================= */
+
+@media (max-width: 768px) {
+
+    .trailer {
+        padding: 70px 5%;
+    }
+
+    .video-wrapper {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+}
+
+/* ================= MOBILE CODEX ================= */
+@media (max-width: 768px) {
+
+    .gallery {
+        padding: 70px 5%;
+    }
 
     .codex-table-wrapper {
         overflow-x: auto;
     }
 
     .codex-table {
-        min-width: 900px;
+        min-width: 700px;
     }
 
-}
+    .codex-table img {
+        width: 80px;
+    }
 
-@media (max-width: 900px) {
+    /* Modal */
+    .codex-modal {
+        padding: 20px;
+        align-items: center;
+        backdrop-filter: blur(6px);
+    }
 
     .codex-content {
-        width: 95%;
+        width: 100%;
+        max-width: 100%;
         height: auto;
-        padding: 30px;
+        max-height: 85vh;
+
+        padding: 25px;
+        border-radius: 16px;
+
+        display: flex;
+        flex-direction: column;
     }
 
     .codex-layout {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
     }
 
     .codex-left img {
-        max-height: 250px;
+        max-height: 200px;
     }
 
+    .codex-right {
+        max-height: 40vh;
+        overflow-y: auto;
+    }
+
+    .close-codex {
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
+    }
 }
 
+/* ================= MOBILE DEVLOPMENT PAGE ================= */
 
 @media (max-width: 768px) {
 
     .dev-content h1 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     .dev-content p {
